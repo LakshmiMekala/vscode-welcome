@@ -35,4 +35,4 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: hello_welcome-$GIT_COMMIT-$CURRENT_VERSION.vsix
-          path: .      
+          path: hello_welcome-$GIT_COMMIT-$CURRENT_VERSION.vsix      
