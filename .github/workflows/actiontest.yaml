@@ -34,5 +34,5 @@ jobs:
       - name: Upload vsix artifact
         uses: actions/upload-artifact@v3
         with:
-          name: hello_welcome-$GIT_COMMIT-$CURRENT_VERSION.vsix
-          path: hello_welcome-$GIT_COMMIT-$CURRENT_VERSION.vsix      
+          name: hello_welcome
+          path: ${{ github.workspace }}/*.vsix      
