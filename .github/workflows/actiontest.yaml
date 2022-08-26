@@ -26,5 +26,12 @@ jobs:
       - name: package artifact
         run: |
           CURRENT_VERSION=$(cat package.json | jq .version | cut -d'"' -f 2)
-          vsce package -o hello_welcome-$CURRENT_VERSION.vsix
-          ls -l     
+          echo "CURRENT_VERSION=$CURRENT_VERSION" >> $GITHUB_ENV
+          vsce package -o hello_welcome-${GITHUB_SHA::6}-${{ env.CURRENT_VERSION }}.vsix
+          ls -l 
+
+      - name: Upload vsix artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: hello_welcome-${GITHUB_SHA::6}-${{ env.CURRENT_VERSION }}.vsix
+          path: .      
