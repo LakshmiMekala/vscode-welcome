@@ -1,0 +1,26 @@
+name: Run Tests
+on: [push, pull_request]
+jobs:
+  build:
+    name: hello welcome
+    runs-on: ubuntu-22.04
+    steps:
+      - name: checkout repo
+        uses: actions/checkout@v2
+
+      - name: setup node
+        uses: actions/setup-node@v1
+        with:
+          node_version: 16
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run tests
+        run: npm test
+
+      - name: package artifact
+        run: |
+          CURRENT_VERSION=$(cat package.json | jq .version | cut -d'"' -f 2)
+          vsce package -o hello_welcome-$CURRENT_VERSION.vsix
+          ls -l     
