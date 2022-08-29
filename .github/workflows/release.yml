@@ -64,6 +64,7 @@ jobs:
           cp /tmp/package.json ./package.json
           npm ci
           npm install
+
       - name: package
         uses: lannonbr/vsce-action@0f3391ee0477b08fae949eb0a875e91e6d20b075
         with:
