@@ -42,5 +42,5 @@ jobs:
         if: startsWith(github.ref, 'refs/tags/')
         env:
           # GHR_COMPRESS: zip
-          GHR_PATH: .
+          GHR_PATH: hello_welcome-$CURRENT_VERSION.vsix
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}           
