@@ -2,7 +2,7 @@
   "name": "hello-welcome",
   "displayName": "hello_welcome",
   "description": "hello example extension",
-  "version": "v0.0.1",
+  "version": "v1.1.0",
   "repository": {"url": "https://github.com/LakshmiMekala/vscode-welcome.git"},
   "engines": {
     "vscode": "^1.70.0"
